@@ -1,0 +1,13 @@
+$background-color: #E06666;
+$header-font-color: rgba(255,248,248,0.72);
+
+body {
+  background: $background-color;
+}
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  font-size: 64px;
+  color: $header-font-color;
+}
