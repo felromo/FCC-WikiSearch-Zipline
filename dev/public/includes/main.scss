@@ -1,8 +1,28 @@
 $background-color: #E06666;
 $header-font-color: rgba(255,248,248,0.72);
+$main-font: 'Nunito', sans-serif;
+
+html,
+body {
+  height: 100%;
+}
 
 body {
+  margin: 0 0;
+}
+
+
+.landing {
   background: $background-color;
+  // height: 600px;
+  height: 100%;
+  width: 100%;
+  margin: 0 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
@@ -10,4 +30,34 @@ h1 {
   font-weight: 400;
   font-size: 64px;
   color: $header-font-color;
+  // position: absolute;
+  // top: 40%;
+  width: 100%;
+  margin: 0 0;
+  padding: 0 0;
+  text-align: center;
+}
+
+.search {
+  font-size: 64px;
+  cursor: pointer;
+}
+
+.starter-tip {
+  font-family: $main-font;
+  font-size: 12px;
+}
+
+.search, .starter-tip, .random-article{
+  color: $header-font-color;
+}
+
+.random-article {
+  font-size: 64px;
+  // align-self: flex-start;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  cursor: pointer;
 }
