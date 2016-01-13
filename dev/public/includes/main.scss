@@ -41,6 +41,10 @@ h1 {
 .search {
   font-size: 64px;
   cursor: pointer;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .starter-tip {
@@ -61,3 +65,63 @@ h1 {
   width: 100%;
   cursor: pointer;
 }
+
+.no-show {
+  visibility: hidden;
+}
+
+
+form input{
+  // display: none;
+  background: $background-color;
+  color: $header-font-color;
+  font-family: $main-font;
+  transition: display 2s;
+  // padding: 10px;
+}
+
+form input:focus {
+  outline-width: 0;
+}
+
+.random {
+  transition: transform .8s ease-in-out;
+}
+
+.random:hover {
+  transform: rotate(360deg);
+}
+
+.search-bar-initial {
+  width: 100%;
+  position: absolute;
+  right: -40px;
+  top: 25%;
+  width: 0;
+  height: 0;
+  // 2 pixel border requires 3.5s animation 1 px requires 2s
+  transition: height 2s ease-in-out 2s, width 2s ease-in-out 2s, border .5s ease-in-out 2s, padding 2s ease-in-out 2.5s;
+  border: none;
+  padding: 0;
+}
+
+.search-bar-after {
+  border: 1px solid $header-font-color;
+  border-radius: 20px;
+  height: 30px;
+  width: 190px;
+  padding: 10px;
+}
+
+.search-initial {
+  transition: all 2s ease-in-out;
+}
+
+.search-after {
+  transform: translate(100px);
+}
+
+// controls the search bar animations
+// taken from http://bootsnipp.com/snippets/featured/expanding-search-button-in-css (slightly modified to suit needs)
+
+// @import "search-animations"
