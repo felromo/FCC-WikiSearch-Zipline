@@ -17,9 +17,9 @@ module.exports = function (grunt) {
                 script: 'dev/server.js'
               }
             },
-            prod: {
+            dist: {
               options: {
-                script: 'path/to/prod/server.js',
+                script: 'dev/dist.js',
                 node_env: 'production'
               }
             },
@@ -53,11 +53,12 @@ module.exports = function (grunt) {
             }
         },
     });
-    
-    
+
+
     grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-build-control');
     grunt.registerTask('server', ['express:dev', 'watch']);
+    grunt.registerTask('dist', ['express:dist', 'watch']);
 };
