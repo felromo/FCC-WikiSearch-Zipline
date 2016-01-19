@@ -11,6 +11,7 @@ angular.module('wikiApp', [])
 
 .factory('wikiFactory', ['$http', function ($http) {
   var search_term = "&srsearch=freedom";
+  var search_title = "";
 
   var base_url = "https://en.wikipedia.org/w/api.php?";
   var url = "action=query&titles=Main%20Page&prop=revisions&rvprop=content&format=json";
@@ -25,6 +26,9 @@ angular.module('wikiApp', [])
     setSearchTerm: function (term) {
       search_term = "&srsearch=" + term;
     },
+    setTitle: function (title) {
+      search_title = title;
+    },
     getList: function () {
       return $http.jsonp(base_url+search_list+search_term+callback);
     },
@@ -36,16 +40,27 @@ angular.module('wikiApp', [])
 
 .controller('wikiController', ['wikiFactory', function (wikiFactory) {
 
-  wikiFactory.test().then(function (reply) {
-    console.log(reply);
-  });
-  wikiFactory.getList().then(function (reply) {
-    console.log(reply);
-  });
-  wikiFactory.titles().then(function (reply) {
-    console.log(reply);
-  });
+  var self = this;
+  self.list_of_articles = [];
+  self.term = "Open Source";
 
-  console.log("test");
+  // wrapper function so we won't have anything hanging in the open
+  self.init = function () {
+    self.runSearch();
+
+  };
+
+  self.runSearch = function () {
+    wikiFactory.setSearchTerm(self.term);
+    wikiFactory.getList().then(function (reply) {
+    self.list_of_articles = reply.data.query.search;
+    console.log(self.list_of_articles);
+    }, function () {
+      console.log("error retrieving the list of articles");
+    });
+  };
+
+  // run the wrapper function
+  self.init();
 
 }]);
