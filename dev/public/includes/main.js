@@ -46,8 +46,13 @@ angular.module('wikiApp', [])
 
   // wrapper function so we won't have anything hanging in the open
   self.init = function () {
-    self.runSearch();
 
+  };
+
+  self.removeLanding = function () {
+    $('h1.title').addClass('remove');
+    $('form').addClass('remove');
+    $('.random-article').addClass('remove');
   };
 
   self.runSearch = function () {
@@ -55,6 +60,7 @@ angular.module('wikiApp', [])
     wikiFactory.getList().then(function (reply) {
     self.list_of_articles = reply.data.query.search;
     console.log(self.list_of_articles);
+    self.removeLanding();
     }, function () {
       console.log("error retrieving the list of articles");
     });
