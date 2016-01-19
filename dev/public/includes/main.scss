@@ -51,7 +51,9 @@ h1 {
 
 .starter-tip {
   font-family: $main-font;
-  font-size: 12px;
+  // font-size: 12px;
+  // bigger font for vissually impaired
+  font-size: 21px;
 }
 
 .search, .starter-tip, .random-article{
