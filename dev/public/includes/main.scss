@@ -39,7 +39,9 @@ h1 {
 }
 
 .search {
+  // this should reduce to around 43px after animation
   font-size: 64px;
+  height: 40px;
   cursor: pointer;
   position: relative;
   flex-direction: row;
@@ -111,6 +113,9 @@ form input:focus {
   height: 30px;
   width: 190px;
   padding: 10px;
+  top: 5;
+  // margin-right: -5px;
+  margin-right: -12px;
 }
 
 .search-initial {
@@ -118,6 +123,7 @@ form input:focus {
 }
 
 .search-after {
+  font-size: 42px;
   transform: translate(100px);
 }
 
