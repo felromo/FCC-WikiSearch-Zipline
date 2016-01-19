@@ -1,4 +1,4 @@
-<html>
+<html ng-app="wikiApp">
   <head>
     <title>FCC-WikiSearch</title>
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="includes/foundation-icons/foundation-icons.css">
     <link rel="stylesheet" href="includes/main.css" type="text/css">
   </head>
-  <body>
+  <body ng-controller="wikiController as wikiCtrl">
     <div class="landing">
       <h1><!-- <i class="fa fa&#45;wikipedia&#45;w"></i> -->Discover</h1>
       <form action="" class="search-form">
@@ -24,7 +24,8 @@
       </div>
     </div>
 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
     <script src="includes/main.js"></script>
   </body>
 </html>
