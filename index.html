@@ -5,27 +5,47 @@
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="includes/foundation-icons/foundation-icons.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
     <link rel="stylesheet" href="includes/main.css" type="text/css">
   </head>
   <body ng-controller="wikiController as wikiCtrl">
-    <div class="landing">
-      <h1><!-- <i class="fa fa&#45;wikipedia&#45;w"></i> -->Discover</h1>
-      <form action="" class="search-form">
-        <div class="search form-group">
-          <input id="search" class="search-bar-initial form-control" type="text" name="search" placeholder="">
-          <i class="fa fa-search search-initial form-control-feedback"></i>
+    <section id="search-options">
+      <div class="landing">
+        <h1 class="title"><!-- <i class="fa fa&#45;wikipedia&#45;w"></i> -->Discover</h1>
+        <form class="search-form" ng-submit="wikiCtrl.runSearch()">
+          <div class="search form-group">
+            <input id="search" class="search-bar-initial form-control" type="text" name="search" placeholder="" ng-model="wikiCtrl.term" autocomplete="off" href="#content">
+            <i class="fa fa-search search-initial form-control-feedback"></i>
+          </div>
+        </form>
+        <p class="starter-tip" id="first-tip">Click Me!</p>
+        <div  class=random-article>
+          <p class="starter-tip">Random Article</p>
+          <!-- <i class="fa fa&#45;arrow&#45;circle&#45;down"></i> -->
+          <i class="fi-die-five random"></i>
         </div>
-      </form>
-      <p class="starter-tip" id="first-tip">Click Me!</p>
-      <div  class=random-article>
-        <p class="starter-tip">Random Article</p>
-        <!-- <i class="fa fa&#45;arrow&#45;circle&#45;down"></i> -->
-        <i class="fi-die-five random"></i>
+      <ul class="list-of-articles">
+        <li ng-repeat="article in wikiCtrl.list_of_articles" class="animated slideInUp">
+          <h1>{{article.title}}</h1>
+          <p ng-bind-html="article.snippet"></p>
+          <!-- <p ng&#45;bind&#45;html="article.snippet"></p> -->
+        </li>
+      </ul>
       </div>
-    </div>
+    </section>
+
+    <!-- <section id="content"> -->
+    <!--   <ul> -->
+    <!--     <li ng&#45;repeat="article in wikiCtrl.list_of_articles"> -->
+    <!--       <p>{{article.title}}</p> -->
+    <!--       <p ng&#45;bind&#45;html="article.snippet"></p> -->
+    <!--     </li> -->
+    <!--   </ul> -->
+    <!-- </section> -->
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="includes/main.js"></script>
   </body>
 </html>
