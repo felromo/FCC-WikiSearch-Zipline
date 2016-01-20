@@ -129,3 +129,15 @@ form input:focus {
   transform: translate(100px);
 }
 
+ul.list-of-articles {
+  // height: 100%;
+  list-style-type: none;
+  margin: 0 auto;
+  height: 100%;
+  width: 50%;
+  overflow: auto;
+  h1 {
+    font-size: 25px;
+    text-align: left;
+  }
+}
