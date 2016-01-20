@@ -18,7 +18,6 @@ body {
   height: 100%;
   width: 100%;
   margin: 0 0;
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,7 +50,9 @@ h1 {
 
 .starter-tip {
   font-family: $main-font;
-  font-size: 12px;
+  // font-size: 12px;
+  // bigger font for vissually impaired
+  font-size: 21px;
 }
 
 .search, .starter-tip, .random-article{
@@ -60,7 +61,6 @@ h1 {
 
 .random-article {
   font-size: 64px;
-  // align-self: flex-start;
   text-align: center;
   position: absolute;
   bottom: 0;
@@ -72,14 +72,16 @@ h1 {
   visibility: hidden;
 }
 
+.remove {
+  display: none;
+}
+
 
 form input{
-  // display: none;
   background: $background-color;
   color: $header-font-color;
   font-family: $main-font;
   transition: display 2s;
-  // padding: 10px;
 }
 
 form input:focus {
