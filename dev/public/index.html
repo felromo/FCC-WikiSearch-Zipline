@@ -25,11 +25,13 @@
           <i class="fi-die-five random"></i>
         </div>
       <ul class="list-of-articles" ng-show="wikiCtrl.display_articles">
-        <li ng-repeat="article in wikiCtrl.list_of_articles" class="animated slideInUp">
-          <h1>{{article.title}}</h1>
-          <p ng-bind-html="article.snippet"></p>
-          <!-- <p ng&#45;bind&#45;html="article.snippet"></p> -->
-        </li>
+        <a href="#">
+          <li ng-repeat="article in wikiCtrl.list_of_articles" class="animated slideInUp">
+            <h1>{{article.title}}</h1>
+            <p ng-bind-html="article.snippet"></p>
+            <!-- <p ng&#45;bind&#45;html="article.snippet"></p> -->
+          </li>
+        </a>
       </ul>
       </div>
     </section>
