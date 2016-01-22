@@ -10,7 +10,7 @@
   </head>
   <body ng-controller="wikiController as wikiCtrl">
     <section id="search-options">
-      <div class="landing">
+      <div class="landing" ng-cloak>
         <h1 class="title"><!-- <i class="fa fa&#45;wikipedia&#45;w"></i> -->Discover</h1>
         <form id="search-form" class="search-form" ng-submit="wikiCtrl.runSearch()">
           <div class="search form-group">
@@ -22,7 +22,7 @@
         <div  class=random-article>
           <p class="starter-tip">Random Article</p>
           <!-- <i class="fa fa&#45;arrow&#45;circle&#45;down"></i> -->
-          <i class="fi-die-five random"></i>
+          <a href="http://en.wikipedia.org/wiki/Special:Random" target="_blank"><i class="fi-die-five random"></i></a>
         </div>
       <!---------------------------second part of app----------------------------------->
       <!-- <div ng&#45;show="wikiCtrl.display_articles" class="animated slideInDown second&#45;headers"> -->
@@ -41,8 +41,8 @@
       </div>
 
       <ul class="list-of-articles" ng-show="wikiCtrl.display_articles">
-        <a href="">
-          <li ng-repeat="article in wikiCtrl.list_of_articles" class="animated slideInUp">
+        <a ng-repeat="article in wikiCtrl.list_of_articles" ng-href="https://en.wikipedia.org/wiki/{{article.title}}" target="_blank">
+          <li class="animated slideInUp">
             <h1>{{article.title}}</h1>
             <p ng-bind-html="article.snippet"></p>
           </li>
