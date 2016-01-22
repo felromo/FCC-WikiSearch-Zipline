@@ -1,6 +1,7 @@
 html,
 body {
   height: 100%;
+  background: #E06666;
 }
 
 body {
@@ -85,7 +86,6 @@ form input:focus {
 }
 
 .search-bar-initial {
-  width: 100%;
   position: absolute;
   right: -40px;
   top: 25%;
@@ -113,6 +113,64 @@ form input:focus {
 .search-after {
   font-size: 42px;
   transform: translate(100px);
+}
+
+ul.list-of-articles {
+  list-style-type: none;
+  width: 50%;
+}
+ul.list-of-articles h1 {
+  font-size: 25px;
+  text-align: left;
+}
+ul.list-of-articles li {
+  border: 1px solid rgba(255, 248, 248, 0.4);
+  border-left: 1px solid rgba(255, 248, 248, 0.4);
+  border-right: 1px solid rgba(255, 248, 248, 0.4);
+  border-bottom: 1px solid rgba(255, 248, 248, 0.1);
+  border-radius: 10px;
+  padding-left: 10px;
+  margin: 8px 0;
+  background: rgba(195, 75, 75, 0.23);
+  box-shadow: 0 4px rgba(173, 55, 55, 0.86);
+  position: relative;
+  transition: all .2s ease;
+  top: 0;
+  left: 0;
+}
+ul.list-of-articles li:active {
+  box-shadow: 0 0 rgba(195, 75, 75, 0.23);
+  top: 4px;
+}
+ul.list-of-articles li:hover {
+  left: -10px;
+}
+ul.list-of-articles p {
+  margin: 0 2px 10px;
+  color: rgba(255, 248, 248, 0.72);
+  font-weight: bold;
+}
+ul.list-of-articles a {
+  text-decoration: none;
+}
+
+.second-headers {
+  text-align: center;
+}
+.second-headers p {
+  justify-content: center;
+  margin: 0;
+}
+
+input#post-search {
+  position: relative;
+  margin-right: 0;
+  top: -7;
+}
+
+.post-search-after {
+  font-size: 42px;
+  color: rgba(255, 248, 248, 0.72);
 }
 
 /*# sourceMappingURL=main.css.map */
