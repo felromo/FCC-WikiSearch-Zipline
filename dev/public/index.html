@@ -41,8 +41,8 @@
       </div>
 
       <ul class="list-of-articles" ng-show="wikiCtrl.display_articles">
-        <a href="">
-          <li ng-repeat="article in wikiCtrl.list_of_articles" class="animated slideInUp">
+        <a ng-repeat="article in wikiCtrl.list_of_articles" ng-href="https://en.wikipedia.org/wiki/{{article.title}}" target="_blank">
+          <li class="animated slideInUp">
             <h1>{{article.title}}</h1>
             <p ng-bind-html="article.snippet"></p>
           </li>
