@@ -1,7 +1,7 @@
 // re-write this as angular
 $(document).ready(function () {
   $(".search-initial").on("click", function () {
-    $('input').addClass('search-bar-after');
+    $('input#search').addClass('search-bar-after');
     $('.starter-tip#first-tip').addClass('no-show');
     $(this).addClass('search-after');
   });
@@ -43,7 +43,7 @@ angular.module('wikiApp', ['ngSanitize'])
 
   self.removeLanding = function () {
     $('h1.title').addClass('remove');
-    $('form').addClass('remove');
+    $('form#search-form').addClass('remove');
     $('.random-article').addClass('remove');
   };
 
