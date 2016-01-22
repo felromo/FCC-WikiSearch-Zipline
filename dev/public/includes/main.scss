@@ -31,6 +31,7 @@ body {
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-box-orient: vertical;
   align-items: center;
   justify-content: center;
 }
