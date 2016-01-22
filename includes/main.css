@@ -86,6 +86,7 @@ form input:focus {
 }
 
 .search-bar-initial {
+  width: 100%;
   position: absolute;
   right: -40px;
   top: 25%;
@@ -117,6 +118,7 @@ form input:focus {
 
 ul.list-of-articles {
   list-style-type: none;
+  height: 100%;
   width: 50%;
 }
 ul.list-of-articles h1 {
@@ -152,25 +154,6 @@ ul.list-of-articles p {
 }
 ul.list-of-articles a {
   text-decoration: none;
-}
-
-.second-headers {
-  text-align: center;
-}
-.second-headers p {
-  justify-content: center;
-  margin: 0;
-}
-
-input#post-search {
-  position: relative;
-  margin-right: 0;
-  top: -7;
-}
-
-.post-search-after {
-  font-size: 42px;
-  color: rgba(255, 248, 248, 0.72);
 }
 
 /*# sourceMappingURL=main.css.map */
