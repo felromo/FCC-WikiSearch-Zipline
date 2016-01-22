@@ -2,9 +2,15 @@ $background-color: #E06666;
 $header-font-color: rgba(255,248,248,0.72);
 $main-font: 'Nunito', sans-serif;
 
+$article-background-color: rgba(195,75,75,0.23);
+// $article-background-color: rgba(195,75,75,1);
+$article-shadow-color: rgba(173,55,55,0.86);
+// $article-shadow-color: rgba(173,55,55,1);
+
 html,
 body {
   height: 100%;
+  background: $background-color;
 }
 
 body {
@@ -97,7 +103,6 @@ form input:focus {
 }
 
 .search-bar-initial {
-  width: 100%;
   position: absolute;
   right: -40px;
   top: 25%;
@@ -129,3 +134,65 @@ form input:focus {
   transform: translate(100px);
 }
 
+ul.list-of-articles {
+  // height: 100%;
+  list-style-type: none;
+  // margin: 0 auto;
+  // height: 100%;
+  width: 50%;
+  // overflow: auto;
+  h1 {
+    font-size: 25px;
+    text-align: left;
+  }
+  li {
+    border: 1px solid rgba(255,248,248,0.40);
+    // border-top: 1px solid rgba(255,248,248,0.40);
+    border-left: 1px solid rgba(255,248,248,0.40);
+    border-right: 1px solid rgba(255,248,248,0.40);
+    border-bottom: 1px solid rgba(255,248,248,0.10);
+    border-radius: 10px;
+    padding-left: 10px;
+    margin: 8px 0;
+    background: $article-background-color;
+    box-shadow: 0 4px $article-shadow-color;
+    position: relative;
+    transition: all .2s ease;
+    top: 0;
+    left: 0;
+  }
+  li:active {
+    box-shadow: 0 0 $article-background-color;
+    top: 4px;
+  }
+  li:hover {
+    left: -10px;
+  }
+  p {
+    margin: 0 2px 10px;
+    color: $header-font-color;
+    font-weight: bold;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.second-headers {
+  text-align: center;
+  p {
+    justify-content: center;
+    margin: 0;
+  }
+}
+
+input#post-search {
+  position: relative;
+  margin-right: 0;
+  top: -7;
+}
+
+.post-search-after {
+  font-size: 42px;
+  color: $header-font-color;
+}
