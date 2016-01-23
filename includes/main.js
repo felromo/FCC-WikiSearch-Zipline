@@ -1,12 +1,3 @@
-// re-write this as angular
-$(document).ready(function () {
-  $(".search-initial").on("click", function () {
-    $('input#search').addClass('search-bar-after');
-    $('.starter-tip#first-tip').addClass('no-show');
-    $(this).addClass('search-after');
-  });
-});
-
 angular.module('wikiApp', ['ngSanitize'])
 
 .factory('wikiFactory', ['$http', function ($http) {
@@ -35,9 +26,31 @@ angular.module('wikiApp', ['ngSanitize'])
   self.list_of_articles = [];
   self.term = "Open Source";
   self.display_articles = false;
+  self.is_search_button_active = false;
 
   // wrapper function so we won't have anything hanging in the open
   self.init = function () {
+
+  };
+
+  self.dynamic_search_button = function () {
+    // the application starts when you initially click the search icon
+    // when you click the icon jquery adds these classes to these elements
+    // * input#search           + search-bar-after
+    // * .starter-tip#fist-tip  + no-show
+    // * .search-initial        + search-after
+
+    if (self.is_search_button_active) {
+      // if the search bar has been laid out act as a submit button
+      self.runSearch();
+    } else {
+      // add all the classes here
+      $('input#search').addClass('search-bar-after');
+      $('.starter-tip#first-tip').addClass('no-show');
+      $('.search-initial').addClass('search-after');
+
+      self.is_search_button_active = true;
+    }
 
   };
 
