@@ -200,11 +200,19 @@ ul.list-of-articles {
 input#post-search {
   position: relative;
   margin-right: 0;
-  top: -7;
+  top: -7px;
 }
 
 .post-search-after {
   font-size: 42px;
   color: $header-font-color;
   cursor: pointer;
+}
+
+.post-random-article {
+  font-size: 57px;
+  text-decoration: none;
+  color: $header-font-color;
+  position: relative;
+  top: 7px;
 }
