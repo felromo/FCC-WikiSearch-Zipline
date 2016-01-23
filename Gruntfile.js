@@ -64,6 +64,13 @@ module.exports = function (grunt) {
                 }
             }
         },
+        autoprefixer: {
+          dev: {
+            files: {
+              'dev/public/includes/style.css': 'dev/public/includes/main.css'
+            }
+          }
+        },
         watch: {
             // bower: {
             //     files: ['bower.json'],
@@ -84,15 +91,20 @@ module.exports = function (grunt) {
               'dev/public/{,*/}*.{html,js,scss}'
             ]
           },
-            sass: {
-                files: ['**/*.scss'],
-                tasks: ['sass:dev']
-            },
+          sass: {
+              files: ['**/*.scss'],
+              tasks: ['sass:dev']
+          },
+          styles: {
+            files: ['dev/public/includes/main.css'],
+            tasks: ['autoprefixer']
+          }
         },
     });
 
 
     grunt.loadNpmTasks('grunt-express-server');
+    grunt.loadNpmTasks('grunt-autoprefixer');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-connect');
