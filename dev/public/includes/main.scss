@@ -234,3 +234,16 @@ input#post-search {
 form#post-search-form {
   margin-bottom: 5px;
 }
+
+// firefox specific 
+@-moz-document url-prefix() {
+  .random-article {
+    left: 0;
+  }
+  .random {
+    display: inline-block;
+  }
+  .search-bar-after {
+    padding: 0 0 0 10px;
+  }
+}
