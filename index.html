@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="includes/foundation-icons/foundation-icons.css">
     <link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
     <link rel="stylesheet" href="includes/style.css" type="text/css">
-    <!--[if IE 6]><link rel="stylesheet" href="includes/ie.css" type="text/css" media="screen, projection"><![endif]-->
-    <!--[if IE 7]><link rel="stylesheet" href="includes/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <!--[if IE]>
+      <link rel="stylesheet" href="includes/ie.css" type="text/css">
+    <![endif]-->
   </head>
   <body ng-controller="wikiController as wikiCtrl">
     <section id="search-options">
       <div class="landing" ng-cloak>
-        <h1 class="title"><!-- <i class="fa fa&#45;wikipedia&#45;w"></i> -->Discover</h1>
+        <h1 class="title">Discover</h1>
         <form id="search-form" class="search-form" ng-submit="wikiCtrl.runSearch()">
           <div class="search form-group">
             <input id="search" class="search-bar-initial form-control" type="text" name="search" placeholder="" ng-model="wikiCtrl.term" autocomplete="off" href="#content">
