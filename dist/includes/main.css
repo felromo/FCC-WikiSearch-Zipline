@@ -6,6 +6,7 @@ body {
 
 body {
   margin: 0 0;
+  font-family: "Nunito", sans-serif;
 }
 
 .landing {
@@ -62,11 +63,11 @@ h1 {
   position: absolute;
   bottom: 0;
   width: 100%;
-  cursor: pointer;
 }
 .random-article a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 .no-show {
@@ -159,7 +160,7 @@ ul.list-of-articles li:hover {
 ul.list-of-articles p {
   margin: 0 2px 10px;
   color: rgba(255, 248, 248, 0.72);
-  font-weight: bold;
+  font-weight: lighter;
 }
 ul.list-of-articles a {
   text-decoration: none;
@@ -180,7 +181,7 @@ input#post-search {
 }
 
 .post-search-after {
-  font-size: 42px;
+  font-size: 34px;
   color: rgba(255, 248, 248, 0.72);
   cursor: pointer;
 }
@@ -191,6 +192,35 @@ input#post-search {
   color: rgba(255, 248, 248, 0.72);
   position: relative;
   top: 7px;
+}
+
+.post-search {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.starter-tip#article-tip {
+  text-align: center;
+  margin: 0;
+}
+
+form#post-search-form {
+  margin-bottom: 5px;
+}
+
+@-moz-document url-prefix() {
+  .random-article {
+    left: 0;
+  }
+
+  .random {
+    display: inline-block;
+  }
+
+  .search-bar-after {
+    padding: 0 0 0 10px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
